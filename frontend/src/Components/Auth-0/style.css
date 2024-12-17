@@ -1,0 +1,215 @@
+.auth {
+    /* background-image: url(/0-Auth/bg-recipe-auth.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat; */
+    height: 100svh;
+    width: 100%;
+    overflow-y: hidden;
+}
+
+.auth-video-con {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.auth-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.main-auth {
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    color: #fff;
+    scale: 0.65;
+    position: absolute;
+    top: -1rem;
+}
+
+.auth-content{
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    text-align: center;
+    width:125%;
+    max-width: 3500px;
+    height: fit-content;
+    /* background: -webkit-linear-gradient(60deg,#fff, #eee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.auth-content h1{
+    font-size: clamp(8rem,9.2rem + 1vw,9.5rem);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-content p{
+    font-size: clamp(1rem,1.5rem + 1vw,2rem);
+    padding-inline: 5rem;
+    font-family: cursive;
+}
+
+.auth-content #p-con{
+    margin-top:3rem;
+    padding-bottom:2rem;
+}
+
+.auth-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:4rem;
+}
+
+.auth-controls button{
+    cursor: pointer;
+    padding:2.5rem 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(to right,orangered,orange);
+    transition: box-shadow 0.3s ease,scale 0.3s ease;
+}
+
+.auth-controls button:hover{
+    box-shadow: inset -2px 2px 10px rgba(0, 0, 0, 0.5);
+    scale:0.99;
+}
+
+.auth-controls button .box-1{
+    background-color: white !important; 
+    position: absolute;
+    top:-50px;
+    height: 250px;
+    width: 5px;
+    transform: rotate(-45deg);
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+}
+
+.auth-controls button .box-2{
+    background-color: white !important;
+    position: absolute;
+    top:-50px;
+    height: 200px;
+    width: 4px;
+    transform: rotate(-45deg);
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+}
+
+button:hover .box-1,button:hover .box-2 {
+    opacity: 1;
+    animation: moveDiagonally 1s ease-in forwards;
+}
+
+button:not(:hover) .box-1, button:not(:hover) .box-2 {
+    animation: fadeOut 0s forwards;
+}
+
+@keyframes moveDiagonally {
+    from {
+        left: -100px;
+        bottom: -100px;
+    }
+    to {
+        left: 150%;
+        bottom: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        left: -100%;
+        bottom: -100%;
+    }
+}
+
+
+.auth-controls button h3{
+    font-size: clamp(1.5rem,2rem + 1vw,2.2rem);
+}
+
+.auth-controls button img{
+    width:40px;
+    height:40px;
+}
+
+/*-------------------------------- Loader ---------------------------------- */
+#loader{
+    font-family:Arial, Helvetica, sans-serif;
+    height:100%;
+    width:100%;
+    position:fixed;
+    background-color: #000;
+    z-index: 999;
+    top:0;
+    transition: all ease 0.5s;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    justify-content: center;
+  }
+  
+  #loader h1{
+    color:transparent;
+    background: linear-gradient(to right, orange,orangered);
+    font-size:4vw;
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+  }
+  
+  #loader h1:nth-child(2){
+    animation-delay: 2s;
+  }
+  
+  #loader h1:nth-child(3){
+    animation-delay: 3s;
+  }
+  
+  @keyframes load {
+    0%{
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    90%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+  }
+  
+  @media(max-width:700px) {
+    #loader h1{
+        font-size:10vw;
+    }
+  }

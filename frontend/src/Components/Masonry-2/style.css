@@ -1,0 +1,250 @@
+.main {
+    background: linen;
+    padding-bottom: 3rem;
+}
+
+.trial-2 {
+    width: 100%;
+    height: 5rem;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+    position: relative;
+    font-size: x-large;
+}
+
+.trial-2 h1 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-size:clamp(4rem,4.5rem + 1vw,5rem);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.trial-2 p {
+    text-align: center;
+    margin: 2rem 1rem; 
+    font-size:clamp(1rem,1.3rem + 1vw,1.5rem);
+    max-width: 80%; 
+}
+
+.trial-2 span {
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+
+/* .svg-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 55%;
+    z-index: 0;
+}
+
+.svg-container svg {
+    width: 200px;
+    height: auto;
+}
+
+.path {
+    stroke-dasharray: 2000; 
+    stroke-dashoffset: 2000; 
+    stroke-width: 12; 
+    stroke: rgb(45, 106, 224);
+    fill: none; 
+    stroke-linecap: round; 
+    stroke-linejoin: round;
+    animation: draw 2s cubic-bezier(0.23,0.54,1,.26) forwards;
+    animation-timeline: scroll(2000px);
+    animation-delay: 1.5s;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+} */
+
+.masonry {
+    transition: all 0.5s ease-in-out;
+    column-gap: 30px;
+    column-fill: initial;
+    margin: 0 10%; 
+    margin-top: 12rem;
+    /* background-color: red; */
+    /* width:80vw; */
+    /* position: relative;
+    left:-10rem; */
+}
+
+.masonry .brick {
+    background-color: antiquewhite;
+    box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.masonry .brick {
+    break-inside: avoid;
+    margin-top: 30px;
+    vertical-align: top;
+    width: 100%;
+}
+
+.masonry .brick img {
+    transition: all 0.5s ease-in-out;
+    backface-visibility: hidden;
+    width: 100%;
+    margin-top: 10px;
+    max-height: 900px;
+    min-height: 180px;
+    border-radius: 15px;
+    margin-top: -5px;
+
+}
+
+.masonry .brick:hover img {
+    opacity: 1;
+}
+
+.masonry.gutterless {
+    column-gap: 0;
+}
+
+.masonry.gutterless .brick {
+    margin-bottom: 0;
+}
+
+@media only screen and (width < 1286px) and (min-width: 948px) {
+    .trial-2 p {
+        margin-inline: 5%;
+        max-height:20rem;
+    }
+
+    .masonry {
+        column-count: 1; /* Single column on small screens */
+        margin: 0 5%; /* Adjust margins for smaller screens */
+        margin-top:13rem;
+        margin-inline:18rem;
+    }
+}
+
+@media only screen and (width < 948px) and (min-width: 700px){
+    .trial-2 p {
+        margin-inline: 5%;
+        max-height:20rem;
+    }
+
+    .masonry {
+        column-count: 1; /* Single column on small screens */
+        margin: 0 5%; /* Adjust margins for smaller screens */
+        margin-top:18rem;
+        margin-inline:10rem;
+    }
+}
+
+@media only screen and (width < 700px){
+    .trial-2 p {
+        margin-inline: 5%;
+        max-height:20rem;
+    }
+
+    .masonry {
+        column-count: 1; /* Single column on small screens */
+        margin: 0 5%; /* Adjust margins for smaller screens */
+        margin-top:25rem;
+        margin-inline:5rem;
+    }
+}
+
+@media only screen and (min-width: 1286px) and (width < 1700px) {
+    .trial-2 p {
+        margin-inline: 10rem; /* Adjust margin for medium screens */
+    }
+
+    .masonry {
+        column-count: 2; /* Two columns on medium screens */
+        margin: 0 5%; /* Adjust margins for medium screens */
+        margin-top:22rem;
+        margin-inline:13rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 1700px) {
+    .trial-2 p {
+        margin-inline: 15rem; /* Adjust margin for large screens */
+    }
+
+    .masonry {
+        column-count: 3; /* Three columns on large screens */
+        margin: 0 10%;
+        margin-top:15rem;
+    }
+}
+
+.masonry .brick p {
+    padding-bottom: 0.5rem;
+    padding-inline: 1rem;
+    font-size: clamp(0.5rem, 0.7rem + 1vw, 1rem);
+    text-align: center;
+}
+
+.masonry .brick h1 {
+    padding-inline: 1rem;
+}
+
+.masonry-route-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.masonry-route-button{
+    cursor: pointer;
+    border-radius: 15px;
+    outline:none;
+    border:none;
+    background-color: orange;
+    padding:1rem 4rem;
+    margin: 1rem 150px;
+    white-space: nowrap;
+    font-size: large;
+    height:3rem;
+}
+
+.masonry-route-button:hover{
+    background: linear-gradient(to right,orangered,orange);
+}
+
+.masonry-route-button:not(:hover) img{
+    animation:turn-back 0.5s ease;
+}
+
+.masonry-route-button:hover img{
+    animation:turn 0.5s ease;
+}
+
+.masonry-route-button img{
+    margin-left:-1rem;
+    margin-right:-1rem;
+}
+
+@keyframes turn-back{
+    to{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes turn{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

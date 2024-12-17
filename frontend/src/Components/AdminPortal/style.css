@@ -1,0 +1,113 @@
+.main-admin{
+    background: url(/AdminPortal-img/pic5_new.png);
+    width:100vw;
+    height:auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* position: fixed; */
+}
+
+.admin-nav{
+    top:5px;
+    background-color: antiquewhite;
+    position:relative;
+    /* max-width: fit-content; */
+}
+
+.adminPortal-grid{
+    display: grid;
+    place-items: center;
+    max-height: 0svh;
+    grid-template-columns: repeat(auto-fit,minmax(600px,1fr));
+    padding-bottom: 4rem;
+}
+
+@media only screen and (width < 2000px){
+    .main-admin{
+        min-height:120svh;
+    }
+    .adminPortal-card{
+        margin:3rem 0;
+    }
+}
+
+@media only screen and (width <= 1200px){
+    .main-admin{
+        min-height: 200svh;
+    }
+    .adminPortal-grid{
+        grid-template-rows:2;
+    }
+}
+
+.adminPortal-card{
+    width:300px;
+    background-color: antiquewhite;
+    padding-bottom:1rem;
+    border-radius: 15px;
+}
+
+.adminPortal-card:nth-child(1){
+    width:500px;
+}
+
+.adminPortal-card:nth-child(2){
+    width:500px;
+}
+
+.adminPortal-card #img-1{
+    width:500px;
+    height: 300px;
+}
+
+.adminPortal-card #img-2{
+    height:300px;
+    width: 500px;
+}
+
+.adminPortal-card img{
+    background-color: aqua;
+    border-radius: 15px;
+}
+
+#card-2 img{
+    height:500px;
+}
+
+.adminPortal-h1{
+    /* color:#fff; */
+    text-align: center;
+    margin-bottom:2rem;
+}
+
+.adminPortal-p{
+    text-align: center;
+    /* color:#fff; */
+    margin-bottom:4rem;
+    padding-inline: 1rem;
+}
+
+.adminPortal-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adminPortal-btn button{
+    padding:0.7rem 3rem;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #fff;
+    border:0;
+    transition: background 0.5s ease;
+}
+
+.adminPortal-btn-info{
+    font-weight: 550;
+    font-size:clamp(1rem,1.3rem + 1vw,1.5rem);
+}
+
+.adminPortal-btn button:hover{
+    background-color: #00c8ff;
+    color:#fff;
+}

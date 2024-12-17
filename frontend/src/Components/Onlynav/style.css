@@ -1,0 +1,225 @@
+.main-onlynav{
+    padding-bottom:70px;
+    /* background: linear-gradient(to right, #999,#fff,#999); */
+    
+    z-index:1000;
+}
+
+.main-onlynav > *{
+    scale:0.9;
+}
+
+nav {
+    height: 70px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    position: fixed;
+    top:0;
+    transition: background-color 0.3s ease, z-index 0.3s ease;
+}
+    
+
+nav h1{
+    font-size: clamp(0.5rem,1rem + 1vw,2rem);
+}
+
+.nav-con button{
+    font-size: clamp(1.1rem,1.2rem + 1vw,1.3rem);
+}
+
+nav button{
+    background-color: transparent;
+    border:none;
+}
+
+nav button{
+    font-size:clamp(0.5rem,0.8rem + 1vw, 1rem);
+    background-color: transparent;
+    border:none;
+    position: relative;
+    padding-top:0.3rem;
+    padding-bottom:0.3rem;
+}
+
+nav button:hover{
+    cursor: pointer;
+}
+
+.nav-con button:nth-child(1)::after, 
+.nav-con button:nth-child(2)::after{
+    content:'';
+    position: absolute;
+    left:0;
+    margin-top: 10px;
+    height:3px;
+    width:0%;
+    background-color: #333;
+    transition: all ease 0.5s;
+}
+
+.nav-con button:not(.magic):hover::after{
+    width:100%;
+}
+
+.nav-con {
+    display: flex;
+    gap: min(4rem,3vw);
+}
+
+.magic img{
+    height: 20px;
+    width:20px;
+    margin-right:10px;
+}
+
+.magic{
+    background: linear-gradient(to right, #C1AC67, #873BB1, #6446C0, #4576BF);
+    padding:1rem 2.6rem;
+    border-radius: 15px;
+    color:#fff;
+    display: inline-block;
+    position: relative;
+    transition: 0.2s all ease-out;
+}
+
+.magic:hover{
+    scale:1.1;
+}
+
+.logout{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap:0.5rem;
+    position: relative;
+}
+
+.logout button{
+    background-color: red;
+    padding:1rem 2rem;
+    border-radius:15px;
+    font-size:20px;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 0.5s;
+}
+
+.logout button img{
+    height:23px;
+    width:23px;
+    margin-right:7px;
+}
+
+.logout button:hover{
+    background-color: rgba(211, 211, 211, 0.411);
+    color:#ff0000;
+}
+
+/* ------------------------ End of Header --------------------------*/
+
+/* -------------------- Hamburger ------------------------------ */
+nav .hamburger {
+    cursor: pointer;
+    position: absolute;
+    right:0;
+    display: none;
+    z-index:5000;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: black;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+.off-screen-menu{
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    top:50px;
+    height:auto;
+    left:-100%;
+    color:#000;
+    background-color: antiquewhite;
+    transition: right 0.3s ease;
+    z-index:90; /* Ensure it's behind the hamburger */
+    transition: all ease 600ms;
+    opacity:0;
+    padding:0 30%;
+    border-radius:15px;
+}
+
+.off-screen-menu.active{
+    left:0;
+    transition: 600ms all ease-in-out;
+    opacity:1;
+}
+
+.off-screen-menu ul{
+    width:100%;
+    text-align: center;
+}
+
+.off-screen-menu li:not(:last-child){
+    border-bottom: 1px solid #333;
+}
+
+.off-screen-menu li{
+    
+    font-size:clamp(1rem,1.5rem + 1vw,2rem);
+    width:100%;
+    padding-top:1rem;
+    padding-bottom: 1rem;
+    list-style-type: none;
+}
+
+.off-screen-menu li:hover{
+    cursor: pointer;
+}
+
+@media (width <= 1320px)
+{
+    nav .nav-con,nav .logout{
+        display:none;
+    }
+    nav .hamburger{
+        display:block;
+        right:2rem;
+    }
+}
+
+/* --------------------------- End of Hamburger ---------------------------*/

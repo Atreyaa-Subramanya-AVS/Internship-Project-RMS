@@ -1,0 +1,232 @@
+.main-del{
+    padding-top:2rem;
+    background: #e4e4e946;
+    padding-bottom:4rem;
+    width:100%;
+}
+
+.del-recipes h1{
+    text-align: center;
+    font-size: clamp(2.5rem,3rem + 1vw,4rem);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sec4-image{
+    width:100%;
+}
+
+.sec4-image .image{
+    height: 100px;
+    width:100px;
+}
+.sec4-image .image {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+.sec4-image .image::before {
+    content: '';
+    position: relative;
+    border-radius:15px;
+    top:30px;
+    left: -15px;
+    width: 250px;
+    height: 10px;
+    background: linear-gradient(to left, red, transparent);
+    z-index: 1;
+}
+.sec4-image .image::after {
+    content: '';
+    position: relative;
+    border-radius:15px;
+    top:30px;
+    left: 0;
+    width: 250px;
+    height: 10px;
+    background: linear-gradient(to right, red, transparent);
+    z-index: 1;
+}
+
+.del-recipes-del{
+    display: flex;
+    gap:2rem;
+    flex-wrap: wrap;
+}
+
+.del-recipes-del h1{
+    text-align: center;
+    font-size:clamp(4rem, 4.5rem + 1vw,5rem);
+    margin-top:0rem;
+    letter-spacing: -4px;
+    margin-top: 4rem;
+    margin-left:2rem;
+    margin-right:2rem;
+}
+
+.info{
+    flex:1;
+    margin-top:5rem;
+}
+
+@media (width <= 2130px)
+{
+    .del-recipes-del{
+        flex-direction: column;
+    }
+    .del-recipes-del h1{
+        margin-top:1rem;
+    }
+    .info p{
+        margin-top:-5rem;
+        
+    }
+    .info{
+        margin-left:5rem;
+        margin-right: 5rem;
+        margin-bottom:5rem;
+    }
+}
+
+.info p{
+    text-align: center;
+    margin-right:3rem;
+    font-size:clamp(1rem , 1.5rem + 1vw,1.5rem);
+    margin-left:-10rem;
+}
+
+.recipes-del{
+    margin-top:9rem;
+    margin-left:2rem;
+    margin-right: 2rem;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    gap:2rem;
+}
+
+.rec p{
+    text-align: center;
+}
+
+.rec{
+    overflow: hidden;
+    height:fit-content;
+    padding-bottom: 2rem;
+    width:400px;
+    background-color: antiquewhite;
+    border-radius: 15px;
+}
+
+.rec > img{
+    grid-template-rows: subgrid;
+    gap:0;
+}
+
+@media (width > 2190px)
+{
+    .recipes-del #item-5{
+        grid-row:2;
+        grid-column: 2;
+    }
+    
+    .recipes-del #item-6{
+        grid-row:2;
+        grid-column: 3;
+    }
+}
+
+/*---------------- Sizes of Images ----------------------- */
+#item-1 img,#item-2 img,#item-3 img,#item-4 img,#item-5 img,#item-6 img{
+    width:105%;
+}
+#item-2 img{
+    width:105%;
+}
+#item-3 img{
+    width:105%;
+}
+
+
+.rec .rec-image img{
+    height:400px;
+    width:fit-content;
+}
+
+.rec h1{
+    text-align: center;
+}
+
+.rec p{
+    font-size:clamp(0.8rem,1rem + 1vw,1.2rem);
+    margin-inline:1rem;
+}
+
+.rec button{
+    margin-top:1rem;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+
+.left-btn{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.left-btn button{
+    border-radius: 15px;
+    font-size:clamp(0.8rem,0.9rem + 1vw, 1.2rem);
+    background-color: orange;
+    border:none;
+    position: relative;
+    padding-top:0.8rem;
+    padding:1rem 2rem;
+    display: flex;
+    gap:0.3rem;
+    font-weight: 600;    
+}
+
+.left-btn button:hover{
+    background:linear-gradient(to right,orangered,orange);
+    color:#ffffffde;
+}
+
+.left-btn button:hover{
+    cursor: pointer;
+}
+
+#seeRecipe img {
+    width: 20px;        
+    height: auto; 
+    animation: turn-back 0.5s ease;
+    animation-fill-mode: forwards;
+    margin-left:0.1rem;
+}
+
+.btn-image{
+    margin-top:0.1rem;
+}
+
+#seeRecipe:hover img {
+    animation: turn 0.5s ease forwards;
+}
+
+@keyframes turn {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes turn-back {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}

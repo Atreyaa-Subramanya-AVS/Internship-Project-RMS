@@ -1,0 +1,27 @@
+.RecipesApp{
+    min-height: 100svh;
+    /* position; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+@media only screen and (width < 1100px){
+    .RecipesApp{
+        min-height: 120svh;
+    }
+}
+
+.AskAIApp{
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.RecipesByIngredientsApp{
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

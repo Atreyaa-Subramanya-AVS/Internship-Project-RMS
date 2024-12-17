@@ -1,0 +1,91 @@
+.ai-route-search {
+    margin: 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ai-route-search .ai-input {
+    position: relative;
+    width: 60%;
+    margin-right:-5rem;
+    /* background-color: #000; */
+    /* z-index: -1; */
+  }
+  
+  .ai-input textarea {
+    width: 100%;
+    border-radius: 15px;
+    max-width: 1500px;
+    min-height: 80px; 
+    max-height: 100px;          /*----------------Height---------------------*/
+    padding-top:0.5rem;
+    padding-left: 1rem;
+    font-size: xx-large;
+    position: relative;
+    resize: none;
+  }
+  
+  .ai-input::after {
+    content: 'Powered By Gemini-1.5';
+    position: absolute;
+    bottom: -1.2rem; 
+    right: 0.5rem;
+    font-size: smaller;
+    color: gray;
+  }
+  
+  .ai-route-search textarea:focus {
+    outline: none;
+    border: 1px solid orange;
+    box-shadow: 4px 2px 4px orange;
+  }
+  
+  .ai-route-search button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.5s ease;
+    margin-left: 6rem;
+    scale:0.8;
+  }
+  
+  .ai-search button {
+    display: inline-flex;
+  }
+  
+  button span {
+    visibility: hidden;
+    transition:padding-right 0.5s ease;
+  }
+  
+  .ai-route-search button:hover span {
+    visibility: visible;
+    padding-right: 1rem;
+    font-size: clamp(1rem, 1.2rem + 1vw, 1.4rem);
+  }
+  
+  .ai-route-search button:hover {
+    background-color: blanchedalmond;
+    width: fit-content;
+    border-radius: 20px;
+  }
+  
+  .ai-route-search img {
+    border-radius: 15px;
+    width: 60px;
+    height: 60px;
+    background-color: blanchedalmond;
+    padding: 0.5em;
+}
+
+.loading-effect{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

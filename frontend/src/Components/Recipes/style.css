@@ -1,0 +1,205 @@
+.loading-effect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:50svh;
+}
+
+.main-recipe-route{
+    overflow-y: hidden;
+    padding-inline:3rem;
+}
+
+.recipe-route {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.recipe-route-card {
+    /* cursor: pointer; */
+    margin:0 auto;
+    width: 100%;
+    /* max-width: 500px; */
+    height: fit-content;
+    /* max-height: 1000px; */
+    background-color: antiquewhite;
+    border-radius: 15px;
+    box-shadow: 10px 3px 6px rgba(0,0,0,0.1);
+    overflow: hidden; 
+    animation: showRecipeCard 1s ease-in forwards;                /* ----------------- Animation of Cards ---------------------------------*/
+    position: relative;
+    opacity: 0;
+}
+
+@keyframes showRecipeCard{
+    from{
+        opacity: 0;
+        filter:blur(20px);
+        transform: translateY(8vh);
+    }
+    to{
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
+}
+
+.recipe-route-image img {
+    width: 100%;
+    height: 400px;                  /*-------------------- Img Size----------------------- */
+    display: block;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.recipe-route-title,
+.recipe-route-desc,
+.recipe-route-cook,
+.recipe-route-servings {
+    padding: 1rem;
+}
+
+.recipe-route-title{
+    text-align: center;
+    font-size: clamp(1.8rem,2rem + 1vw,2.4rem);
+}
+
+.recipe-route-desc{
+    text-align: center;
+    font-size: clamp(0.5rem,0.7rem + 1vw,0.9rem);
+}
+
+.recipe-route-cook,.recipe-route-servings{
+    font-size: clamp(0.5rem,1rem + 1vw,1.2rem);
+}
+
+.recipe-card-bottom{
+    display: flex;
+    white-space:nowrap;
+    justify-content: center;
+    /* background-color: aqua; */
+}
+
+.recipe-card-bottom img{
+    height:30px;
+    width:30px;
+    margin:0 -0.5rem 0 0rem;
+}
+
+.recipe-route-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+}
+
+.recipe-route button{
+    cursor: pointer;
+    border-radius: 15px;
+    outline:none;
+    border:none;
+    background-color: orange;
+    padding:1rem 3rem;
+    margin: 1rem 150px;
+    white-space: nowrap;
+    font-size: large;
+}
+
+.recipe-route button:hover{
+    background: linear-gradient(to right,orangered,orange);
+}
+
+.recipe-route button:not(:hover) img{
+    animation:turn-back 0.5s ease;
+}
+
+.recipe-route button:hover img{
+    animation:turn 0.5s ease;
+}
+
+.recipe-route-button img{
+    margin-left:0.5rem;
+    width:20px;
+    height:20px;
+}
+
+@keyframes turn-back{
+    to{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes turn{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/*------------------------ Search -------------------------*/
+.recipe-route-search{
+    margin:4rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.recipe-route-search input[type="text"]{
+    width:70%;
+    border-radius: 15px;
+    max-width:1000px;
+    height:60px;
+    padding-left:1rem;
+    font-size: xx-large;
+    /* min-width: 200px; */
+}
+
+.recipe-route-search input[type="text"]:focus{
+    outline: none;
+    border:1px solid orange;
+    box-shadow: 4px 2px 4px orange;
+}
+
+.recipe-route-search button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.5s ease;
+    margin-left: 1rem;
+}
+
+button span {
+    visibility: hidden;
+    transition:padding-right 0.5s ease
+}
+
+.recipe-route-search button:hover span {
+    visibility: visible;
+    padding-right: 1rem;
+    font-size: clamp(1rem, 1.2rem + 1vw, 1.4rem);
+}
+
+.recipe-route-search button:hover {
+    background-color: blanchedalmond;
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.recipe-route-search img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: blanchedalmond;
+    padding: 0.5em;
+}

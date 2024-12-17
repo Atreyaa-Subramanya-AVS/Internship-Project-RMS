@@ -1,0 +1,223 @@
+.main-feat{
+    padding-top:3rem;
+    /* margin-top: 2rem; */
+    background: peachpuff;
+    padding-bottom:2rem;
+    /* height:100svh; */
+}
+
+.feat-recipes{
+    width:100%;
+}
+.feat-recipes .image{
+    height: 100px;
+    width:100px;
+}
+.feat-recipes .image {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+.feat-recipes .image::before {
+    content: '';
+    position: relative;
+    border-radius:15px;
+    top:40px;
+    left: 0;
+    width: 250px;
+    height: 10px;
+    background: linear-gradient(to left, red, transparent);
+    z-index: 1;
+}
+.feat-recipes .image::after {
+    content: '';
+    position: relative;
+    border-radius:15px;
+    top:40px;
+    left: 0;
+    width: 250px;
+    height: 10px;
+    background: linear-gradient(to right, red, transparent);
+    z-index: 1;
+}
+
+.feat-recipes h1{
+    text-align: center;
+    font-size:clamp(4rem, 4.5rem + 1vw,5rem);
+    margin-top:0rem;
+}
+
+.info{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(50%);
+    max-width:50%;
+}
+
+.info p{
+    text-align: center;
+    font-size:clamp(1rem , 1.5rem + 1vw,1.5rem);
+    padding-right:4rem;
+    width:140%;
+    margin:-3rem 0;
+}
+
+.rec-img img{
+    height: 200px;
+}
+
+.recipes {
+    width: calc(100% - 10rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+    gap:3rem;
+    margin:3rem auto;
+    margin-top: 10rem;
+}
+
+.rec-item {
+    width: 100%;
+    max-width: 600px;
+    width:110%;
+    height:fit-content;
+    background-color: lightgrey; /* Added for visual clarity */
+    box-sizing: border-box;
+    text-align: center;
+    /* border:5px solid red; */
+    border-radius: 15px;
+    padding-bottom: 2rem;
+}
+
+.rec-item img{
+    height:400px;         /* ------------- Height of Image -----------------------*/
+    border-radius: 10px;
+    width:100%;
+}
+
+#rec-item-2 h2::before,
+#rec-item-3 h2::before{
+    content:'';
+    display: block;
+    position: relative;
+    top:1rem;
+    left:1.5rem;
+    width:5rem;
+    height:0.3rem;
+    border-radius: 15px;
+    background:linear-gradient(to right,transparent,red);
+    margin-top:0.8rem;
+}
+
+#rec-item-1 h2::before{
+    content:'';
+    display: block;
+    position: relative;
+    top:1.125rem;
+    left:2.5rem;
+    width:5rem;
+    height:0.3rem;
+    border-radius: 10px;
+    background:linear-gradient(to right,transparent,red);
+    margin-top:0.8rem;
+}
+#rec-item-4 h2::before{
+    content:'';
+    display: block;
+    position: relative;
+    top:1.125rem;
+    left:0.5rem;
+    width:5rem;
+    height:0.3rem;
+    border-radius: 10px;
+    background:linear-gradient(to right,transparent,red);
+    margin-top:0.8rem;
+}
+
+@media only screen and (width < 1600px)
+{
+    #rec-item-4{
+        grid-row:2;
+        grid-column: 2;
+    }
+}
+
+.rec-item h2{
+    margin-top:-0.5rem;
+    position: relative;
+}
+
+.rec-item p{
+    font-size:clamp(0.5rem,1rem + 1vw,1.5rem);
+}
+
+/* @media (width <= 1076px){
+    .rec-item{
+        width:60%;
+    }
+} */
+
+.left-btn-feat{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.left-btn-feat button{
+    border-radius: 15px;
+    font-size:clamp(0.8rem,0.9rem + 1vw, 1.2rem);
+    background-color: orange;
+    border:none;
+    position: relative;
+    padding-top:0.8rem;
+    padding:1rem 2rem;
+    display: flex;
+    gap:0.3rem;
+    font-weight: 600;
+    margin-top:1.4rem;
+}
+
+.left-btn-feat button:hover{
+    background: linear-gradient(to right,orangered,orange);
+}
+
+.left-btn-feat button:hover{
+    cursor: pointer;
+}
+
+#seeRecipe img {
+    width: 20px;        
+    height: auto; 
+    animation: turn-back 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+#seeRecipe:hover img {
+    animation: turn 0.5s ease forwards;
+}
+
+@keyframes turn {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes turn-back {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+
+

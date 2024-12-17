@@ -1,0 +1,36 @@
+.main-adminRecipes{
+    width:95%;
+    background-color: antiquewhite;
+    padding-inline: 3rem;
+    /* padding-top:0.5rem; */
+    margin-left:2.5rem;
+    margin-right:5rem;
+    border-radius: 15px;
+    height:100px;
+    display: flex;
+    position: sticky;
+    top:1rem;
+    justify-content: space-between;
+}
+
+.logout button:hover{
+    cursor: pointer;
+}
+
+.adminRecipes-logo h1{
+    padding-top:1.5rem;
+}
+
+.adminRecipes-title h2{
+    padding-top:2rem;
+}
+
+@media only screen and (width > 1850px){
+    .adminRecipes-logo h1{
+        padding-top:1rem;
+    }
+    
+    .adminRecipes-title h2{
+        padding-top:1.3rem;
+    }
+}

@@ -1,0 +1,34 @@
+.adminRecipes-btn{
+    width:fit-content;
+    background-color: #000;
+}
+
+.results-list{
+    display: flex;
+    margin-top:-3.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:2rem;
+    background-color: lightgrey;
+    margin-left:11rem;
+    margin-right:18rem;
+    border-radius: 15px;
+    gap:0.5rem;
+}
+
+.results-list > *{
+    height:2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-bottom:1px solid black; */
+}
+
+.results-list > *:not(:last-child){
+    border-bottom:1px solid black;
+}
+
+.results-list > *:hover{
+    cursor: pointer;
+}
